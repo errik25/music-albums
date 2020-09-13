@@ -1,0 +1,33 @@
+.App__searchField {
+}
+
+.App__searchButton {
+    border: 1px solid black;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.App__searchResults {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+}
+
+.App__resultRow {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.App__addToFavourites {
+    text-decoration: underline;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.App__favourites {
+}
