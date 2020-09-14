@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import { pageReducer } from './page'
+import { searchReducer } from './search'
+import {favouritesReducer} from "./favourites";
 
 export const rootReducer = combineReducers({
-    page: pageReducer
+    search: searchReducer,
+    favourites: favouritesReducer
 })

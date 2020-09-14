@@ -4,9 +4,9 @@ export const SEARCH_REQUEST = 'SEARCH_REQUEST'
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS'
 export const SEARCH_FAILURE = 'SEARCH_FAILURE'
 
-export function search(query, page = 1) {
+export function search(query, page = 0) {
     return dispatch => {
-        dispatch({type: SEARCH_REQUEST, payload: query})
+        dispatch({type: SEARCH_REQUEST, payload: {query, page}})
         axios({
             method: 'GET',
             url: `https://musicbrainz.org/ws/2/recording/`,
@@ -28,19 +28,4 @@ export function search(query, page = 1) {
             console.log(err)
         })
     }
-}
-export const ADD_TO_FAVOURITES = 'ADD_TO_FAVOURITES'
-export const REMOVE_FROM_FAVOURITES = 'REMOVE_FROM_FAVOURITES'
-
-export function addToFavourites(item) {
-    return {type: ADD_TO_FAVOURITES, payload: item}
-}
-
-export function removeFromFavourites(item) {
-    return {type: REMOVE_FROM_FAVOURITES, payload: item}
-}
-
-export const READ_FAVOURITES = 'READ_FAVOURITES'
-export function readFavourites() {
-    return {type: READ_FAVOURITES}
 }
